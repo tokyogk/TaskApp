@@ -32,7 +32,7 @@ public class TaskAlarmReceiver extends BroadcastReceiver {
         // タスクの情報を設定する
         builder.setTicker(task.getTitle()); // 5.0以降は表示されない
         builder.setContentTitle(task.getTitle());
-       // builder.setCategory(task.getCategory());
+        builder.setCategory(task.getCategory());
         builder.setContentText(task.getContents());
 
         // 通知をタップしたらアプリを起動するようにする

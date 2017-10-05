@@ -140,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
         Task task = new Task();
         task.setTitle("作業");
         task.setCategory("カテゴリー");
-        task.setSerchCate("カテサーチ");
         task.setContents("プログラムを書いてPUSHする");
         task.setDate(new Date());
         task.setId(0);

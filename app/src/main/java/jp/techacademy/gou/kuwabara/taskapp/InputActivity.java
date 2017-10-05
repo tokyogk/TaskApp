@@ -25,7 +25,7 @@ public class InputActivity extends AppCompatActivity {
 
     private int mYear, mMonth, mDay, mHour, mMinute;
     private Button mDateButton, mTimeButton;
-    private EditText mTitleEdit, mCategory , mContentEdit;
+    private EditText mTitleEdit, mCategory ,mSerchCate , mContentEdit;
     private Task mTask;
     private View.OnClickListener mOnDateClickListener = new View.OnClickListener() {
         @Override
@@ -90,6 +90,7 @@ public class InputActivity extends AppCompatActivity {
         findViewById(R.id.done_button).setOnClickListener(mOnDoneClickListener);
         mTitleEdit = (EditText)findViewById(R.id.title_edit_text);
         mCategory = (EditText)findViewById(R.id.category_edit_text);
+        mSerchCate =(EditText)findViewById(R.id.serchcate_edit_text);
         mContentEdit = (EditText)findViewById(R.id.content_edit_text);
 
 
@@ -111,7 +112,8 @@ public class InputActivity extends AppCompatActivity {
         } else {
             // 更新の場合
             mTitleEdit.setText(mTask.getTitle());
-           /* mCategory.setText(mTask.getCategory()); */
+            mCategory.setText(mTask.getCategory());
+            mSerchCate.setText(mTask.getSerchCate());
             mContentEdit.setText(mTask.getContents());
 
             Calendar calendar = Calendar.getInstance();
@@ -151,10 +153,11 @@ public class InputActivity extends AppCompatActivity {
 
         String title = mTitleEdit.getText().toString();
         String category = mCategory.getText().toString();
+        String serchcate =mSerchCate.getText().toString() ;
         String content = mContentEdit.getText().toString();
 
         mTask.setTitle(title);
-        /*mTask.setCategory(category);*/
+        mTask.setCategory(category);
         mTask.setContents(content);
         GregorianCalendar calendar = new GregorianCalendar(mYear,mMonth,mDay,mHour,mMinute);
         Date date = calendar.getTime();
